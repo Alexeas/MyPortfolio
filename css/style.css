@@ -566,4 +566,7 @@ textarea:focus{
     form button {
         margin-right: 3px;
     }
+    #text_input{
+        height: 100px;
+    }
 }
