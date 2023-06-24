@@ -434,6 +434,12 @@ form {
     padding: 24px;
     box-sizing: border-box;
     font-size: 0;
+    margin: 12px 0;
+}
+#form_editor div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 form button {
     margin-right: 6px;
