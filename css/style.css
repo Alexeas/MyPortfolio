@@ -560,4 +560,10 @@ textarea:focus{
         transform: rotateZ(-45deg);
         background-color:rgb(253, 253, 253);
     }
+    button, .button {
+        padding: 6px;
+    }
+    form button {
+        margin-right: 3px;
+    }
 }
