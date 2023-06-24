@@ -236,9 +236,6 @@ section > p::first-letter{
     font-size: 30px;
     margin-left: 20px;
 }
-#text_input{
-    margin-top: 12px;
-}
 .examp {
     display: block;
     padding: 24px;
@@ -441,6 +438,7 @@ form {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 12px;
 }
 form button {
     margin-right: 6px;
