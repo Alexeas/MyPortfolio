@@ -563,10 +563,17 @@ textarea:focus{
     button, .button {
         padding: 6px;
     }
+    form {
+        padding: 0;
+    }
     form button {
         margin-right: 3px;
     }
     #text_input{
         height: 100px;
+    }
+    textarea {
+        font-size: 10px;
+        line-height: 1;
     }
 }
