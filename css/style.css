@@ -436,7 +436,7 @@ form {
     align-items: center;
     flex-wrap: wrap;
 }
-#form_editor div button{
+#form_editor div button, #form_editor div input{
     margin-bottom: 12px;
 }
 form button {
@@ -577,7 +577,6 @@ textarea:focus{
         height: 150px;
     }
     textarea {
-        font-size: 10px;
-        line-height: 1;
+        font-size: 12px;
     }
 }
