@@ -1,0 +1,586 @@
+@font-face {
+    font-family: "Kalam";
+    src: url(../fonts/Kalam-Light.ttf);
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Kalam";
+    src: url(../fonts/Kalam-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Kalam";
+    src: url(../fonts/Kalam-Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+/*Обнуляем стили*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    outline: none;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; 
+}
+ul { 
+    list-style: none; 
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+strong {
+    font-weight: bold;
+} 
+input {
+    outline: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img {
+    border: 0;
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+button, .button {
+    cursor: pointer;
+    color: antiquewhite;
+    padding: 12px;
+    background-color:rgb(32, 32, 92);
+    border-radius: 5px;
+    display: block;
+    border: 1px solid rgb(13, 13, 37);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    
+}
+button:hover {
+    transition: all 0.3s;
+    background-color:rgb(60, 60, 173);
+}
+/*Закончили обнулять стили*/
+
+
+/*Тела документа*/
+body{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* background-image: url("../images/blackhouse.jpg"); */
+    /* background-size: 50px; */
+    background-repeat: repeat;
+    background-attachment: fixed!important;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: normal;
+    font-style: normal;
+}
+
+main{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border: 1px solid black;
+    background-color: rgb(18, 18, 41);
+    position: relative;
+}
+section {
+    padding: 0 12px;
+}
+section h2{
+    margin-bottom: 24px;
+}
+#logo{
+    margin: 0 12px 0 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 12px;
+    transition: all 0.2s;
+}
+#logo:hover{
+    background-color: rgb(60, 60, 139);
+    color: rgb(28, 9, 46);
+}
+.inline_list{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.inline_list>li{
+    min-width: 120px;
+    text-align: center;
+    margin-left: -1px;
+}
+.inline_list>li>a{
+    border: 1px solid black;
+}
+.inline_list>li:first-child>a{
+    border-radius: 5px 0 0 5px;
+}
+.inline_list>li:last-child>a{
+    border-radius: 0 5px 5px 0;
+}
+.inline_list a{
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    display: block;
+}
+.open_list{
+    position: relative;
+}
+.column_list{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    border: 1px solid black;
+    border-top: none;
+    min-width: 120px;
+    background-color:rgb(124, 101, 101);
+    transition: all 0.2s;
+}
+.column_list > li > a{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.column_list > li > a:last-child{
+    border-bottom: none;
+}
+.column_list > li {
+    margin-top: -1px;
+}
+.column_list li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    text-align: center;
+}
+.inline_list:first-child li a:hover .column_list{
+    display: block;
+}
+.open_list:hover .column_list{
+    visibility:visible;
+    opacity: 1;
+}
+.open_list_two{
+    position: relative;
+}
+.column_list_two{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    border: 1px solid black;
+    top: 0px;
+    left: 118px;
+    width: 100%;
+    background-color:rgb(124, 101, 101);
+    transition: all 0.2s;
+    border: 1px solid black;
+}
+.open_list_two:hover .column_list_two{
+    visibility:visible;
+    opacity: 1;
+}
+.column_list_two > li{
+    border-bottom: 1px solid black;
+}
+.column_list_two > li:last-child{
+    border-bottom: none;
+}
+.column_list_two a{
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+}
+section a{
+    margin-right: 24px;
+}
+section > p{
+    padding: 0 24px;
+}
+section > p::first-letter{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.examp {
+    display: block;
+    padding: 24px;
+    padding: 12px;
+    height: 200px;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+}
+.examp p{
+    word-break: break-all;
+    overflow: hidden;
+    padding: 24px;
+    margin: 0 auto;
+    transition: all 1s;
+    opacity: 1;
+    visibility: hidden;
+    animation: ideR 20s linear 3s 1 forwards;
+    vertical-align: middle;
+    transform-origin: top;
+    max-height: 7000px;
+    width: 400px;
+    margin-top: 0;
+}
+.examp:hover p{
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+.examp, .examp b {
+    text-align: center;
+}
+.imgSW {
+    display: block;
+    width: 500px;
+    position: absolute;
+    animation: ideSW 5s linear 1 forwards;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: left;
+}
+
+@keyframes ideR {
+    0% {
+        /* padding-top: 100px;
+        padding-bottom: 0; */
+        visibility: visible;
+        transform: perspective(150px) rotateX(40deg) translateY(200px);
+    }
+    100% {
+        visibility: visible;
+        transform: perspective(150px) rotateX(40deg) translateY(-500px);
+        /* padding-top: -500px; */
+        /* padding-bottom: 24px; */
+    }
+}
+@keyframes ideSW {
+    0%{
+        transform: scale(1) translateX(-50%);
+    }
+    100% {
+        transform: scale(0) translateX(-50%);
+    }
+}
+.ul_ex{
+    list-style: disc inside;
+    border: 2px solid red;
+}
+
+
+
+/*Slider*/
+.slider{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid rgb(28, 9, 46);
+    overflow: hidden;
+    position: relative;
+}
+.slider__slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+.slider__slides input {
+    position: absolute;
+    visibility: hidden;
+}
+.slider__slide {
+    width: 20%;
+    transition: all 0.5s;
+}
+.slider__slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+}
+.nav-wrapper{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color:rgba(44, 42, 42, 0.9);
+}
+.slider__navigation{
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.label_nav{
+    display: block;
+    width: 30px;
+    height: 6px;
+    margin: 6px;
+    background-color:rgb(216, 190, 190);
+    transition: all 0.2s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.label_nav:hover{
+    transform: scale(1.25);
+    background-color:rgb(175, 155, 155);
+}
+#r1:checked ~ .sl1 {
+    margin-left: 0;
+}
+#r2:checked ~ .sl1 {
+    margin-left: -20%;
+}
+#r3:checked ~ .sl1 {
+    margin-left: -40%;
+}
+#r4:checked ~ .sl1 {
+    margin-left: -60%;
+}
+#r5:checked ~ .sl1 {
+    margin-left: -80%;
+}
+.burger-menu{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    transition: all .3s;
+    cursor: pointer;
+    display: none;
+}
+.burger-menu::after, .burger-menu::before, .burger-menu span{
+    transition: all .2s;
+}
+.burger-menu span{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color:rgb(216, 190, 190);
+}
+.burger-menu::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color:rgb(216, 190, 190);
+    transform-origin: bottom left;
+}
+.burger-menu::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color:rgb(216, 190, 190);
+    transform-origin: top left;
+}
+form {
+    padding: 24px;
+    box-sizing: border-box;
+    font-size: 0;
+    margin: 12px 0;
+}
+#form_editor div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#form_editor div button{
+    margin-bottom: 12px;
+}
+form button {
+    margin-right: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: right;
+}
+#bold-button{
+    font-weight: bold;
+}
+#italic-button{
+    font-style: italic;
+}
+#underline-button{
+    text-decoration: underline;
+}
+.output{
+    min-height: 200px;
+    background-color:rgba(235, 202, 202, 0.747);
+    cursor:text;
+    padding: 6px;
+}
+.output pre{
+    font-size: large;
+    padding: 24px;
+    border: 2px solid gray;
+    margin: 4px;
+    background-color: white;
+}
+.output pre a{
+    color: inherit;
+    transition: all 0.3s;
+}
+.output pre a:hover{
+    opacity: 0.8;
+}
+textarea{
+    width: 100%;
+    max-width: 100%;
+    max-height: 300px;
+    padding: 12px;
+    line-height: 1.2;
+    font-size: 20px;
+    border-radius: 5px;
+    resize: vertical;
+    margin: 12px 0;
+}
+textarea:focus{
+    outline: none;
+    border: 1px solid rebeccapurple;
+}
+.button_light{
+    background-color:rgb(28, 9, 46);
+    color: bisque;
+    outline: rgb(172, 83, 255);;
+}
+
+@media (max-width: 767px) {
+    .inline_list {
+        display: none;
+    }
+    .burger-menu{
+        display: block;
+    }
+    .inline_list{
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: -999px;
+        opacity: 0;
+        transition: all 0.5s;
+        z-index: 1;
+        width: 100%;
+    }
+    .burger-active{
+        position: absolute;
+        opacity: 1;
+        top: 100%;
+        left: 0px;
+        z-index: 99;
+        width: 100%;
+        background-color:rgba(238, 155, 155, 0.4);
+    }
+    .burger-active > li a{
+        background-color:rgb(18, 18, 41);
+    }
+    .column_list{
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        width: 90%;
+        margin-left: 5%;
+        transition: all 0.2s;
+        border: none;
+        background: none;
+    }
+    .column_list > li a{
+        background-color:rgb(27, 27, 63);
+    }
+    .column_list_two{
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        width: 80%;
+        margin-left: 10%;
+        transition: all 0.2s;
+        border: 1px solid black;
+        background: none;
+        border: none;
+    }
+    .column_list_two > li a{
+        background-color:rgb(36, 36, 83);
+    }
+    .burger-trans span{
+        width: 0%;
+        background-color: rgb(253, 253, 253);
+    }
+    .burger-trans::after{
+        top: 3px;
+        transform: rotateZ(45deg);
+        background-color:rgb(253, 253, 253);
+    }
+    .burger-trans::before{
+        bottom: 3px;
+        transform: rotateZ(-45deg);
+        background-color:rgb(253, 253, 253);
+    }
+    button, .button {
+        padding: 6px;
+    }
+    form {
+        padding: 0;
+    }
+    form button {
+        margin-right: 3px;
+    }
+    #text_input{
+        height: 150px;
+    }
+    textarea {
+        font-size: 10px;
+        line-height: 1;
+    }
+}
