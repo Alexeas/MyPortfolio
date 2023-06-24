@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="rus">
+  <!-- Тэг хэда страницы (не виден юзеру, нужен для браузера) -->
+  <head>
+    <!-- Метатэг кодировки -->
+    <meta charset="UTF-8">
+    <!-- Устаревшие метатэги адаптивности -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
+    <!-- Основной метатэг адаптивности -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Тэги подключения иконки и стилей -->
+    <link rel="icon" href="images/blackhouse.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/components/module.js"></script>
+    <!-- Основные метатэги для СЕО -->
+    <meta name="keywords" content="Сайт с нуля, деньги, власть">
+    <meta name="author" content="">
+    <meta name="description" content="Создание сайта с нуля для чайников.">
+    <!-- Тэг титула страницы -->
+    <title>Hello World!</title>
+  </head>
+  <!-- Закрытие тэга хэда страницы (не виден юзеру, нужен для браузера) -->
+  <!-- Начало тэга тела страницы (контент располагается в нём) -->
+  <body>
+    <main>
+      <a id="logo" href="#button">VK</a>
+      <nav>
+        <div id="burger-menu" class="burger-menu">
+          <span></span>
+        </div>
+        <ul id="inline_list" class="inline_list">
+          <li class="open_list"><a href="https/ete.ru">Музыка</a>
+            <ul class="column_list">
+              <li><a href="#">Rotting Christ Christ Christ</a></li>
+              <li class="open_list_two"><a href="#">Septicflesh</a>
+                <ul class="column_list_two">
+                  <li><a href="#">Music Box</a></li>
+                  <li><a href="#">Anubis</a></li>
+                </ul>
+              </li>
+              <li><a href="#">JudasPriest</a></li>
+            </ul>
+          </li>
+          <li><a href="https/fefe.ru">Фильмы</a></li>
+          <li><a href="https/fefe.ru">Мультфильмы</a></li>
+          <li><a href="#">Актёры</a></li>
+        </ul>
+      </nav>
+    </main>
+
+    <!-- <section>
+      <div class="examp">
+        <img class="imgSW" src="images/strwrs.png" alt="">
+        <p>
+          <b>Episode IX</b> <br>
+          <b>THE RISE OF SKYWALKER</b> <br> <br>
+          The dead speak! The galaxy has heard a mysterious broadcast, a threat of REVENGE in the sinister voice of the late EMPEROR PALPATINE.
+            GENERAL LEIA ORGANA dispatches secret agents to gather intelligence, while REY, the last hope of the Jedi, trains for battle against the diabolical FIRST ORDER.
+            Meanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....
+        </p>
+      </div>
+    </section> -->
+    <section>
+      <h2 align="center" >Текстовый редактор</h2>
+      <p>
+        Простой текстовый редактор с помощником ввода тэгов, а также с возможностью автоматически отображать то, что получается в итоге на странице.
+      </p>
+      <form id="form_editor" action="#">
+        <input id="color-button" type="color">
+        <button id="clear-button">X</button>
+        <button id="bold-button">Жирный</button>
+        <button id="italic-button">Курсив</button>
+        <button id="underline-button">Подчёркнутый</button>
+        <button id="link-button">Ссылка</button>
+        <button id="centr-button">Титул</button>
+        <textarea placeholder="Text" name="text_input" id="text_input" cols="100" rows="50" autofocus></textarea>
+        <input id="text_inputBotton" class="button" type="submit">
+      </form>
+      <div class="output">
+        <pre placeholder="Text" id="text_output"></pre>
+      </div>
+    </section>
+    <section>
+      <my-input><slot>Text</slot></my-input>
+    </section>
+    <!-- Тэг подключения js файла -->
+  <script src="js/main.js"></script>
+  </body>
+</html>
