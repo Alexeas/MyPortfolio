@@ -229,9 +229,6 @@ section{
 section a{
     margin-right: 24px;
 }
-section > p{
-    padding: 0 24px;
-}
 section > p::first-letter{
     font-size: 30px;
     margin-left: 20px;
